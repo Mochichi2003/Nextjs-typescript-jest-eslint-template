@@ -1,5 +1,5 @@
 {
-  "name": "typescript-eslint-tailwind-docker-template",
+  "name": "next-js-templete",
   "version": "1.0.0",
   "scripts": {
     "dev": "next -p 8000",
