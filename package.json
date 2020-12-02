@@ -23,6 +23,10 @@
       "yarn type-check",
       "yarn test",
       "git add ."
+    ],
+    "*.*": [
+      "yarn format",
+      "git add ."
     ]
   },
   "dependencies": {
