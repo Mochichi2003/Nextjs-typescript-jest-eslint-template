@@ -20,6 +20,7 @@
     "*.@(ts|tsx)": [
       "yarn lint",
       "yarn format",
+      "yarn type-check",
       "yarn test",
       "git add ."
     ]
