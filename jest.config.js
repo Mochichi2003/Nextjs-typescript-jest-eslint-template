@@ -1,18 +1,21 @@
 module.exports = {
-  roots: ["<rootDir>"],
-  moduleFileExtensions: ["ts", "tsx", "js", "json", "jsx"],
-  testPathIgnorePatterns: ["<rootDir>[/\\\\](node_modules|.next)[/\\\\]"],
-  transformIgnorePatterns: ["[/\\\\]node_modules[/\\\\].+\\.(ts|tsx)$"],
-
+  preset: "ts-jest",
+  testEnvironment: "node",
+  roots: ["<rootDir>/"],
+  setupFilesAfterEnv: ["<rootDir>/test/setupTests.ts"],
+  testPathIgnorePatterns: ["<rootDir>/.next/", "<rootDir>/node_modules/"],
+  snapshotSerializers: ["enzyme-to-json/serializer"],
   transform: {
-    "^.+\\.(ts|tsx)$": "babel-jest",
+    "^.+\\.(ts|tsx)$": "ts-jest",
   },
-  watchPlugins: [
-    "jest-watch-typeahead/filename",
-    "jest-watch-typeahead/testname",
-  ],
-  moduleNameMapper: {
-    "\\.(css|less|sass|scss)$": "identity-obj-proxy",
-    "\\.(gif|ttf|eot|svg|png)$": "<rootDir>/test/__mocks__/fileMock.js",
+  moduleFileExtensions: ["ts", "tsx", "js", "jsx", "json", "node"],
+  // https://github.com/zeit/next.js/issues/8663#issue-490553899
+  globals: {
+    // we must specify a custom tsconfig for tests because we need the typescript transform
+    // to transform jsx into js rather than leaving it jsx such as the next build requires. you
+    // can see this setting in tsconfig.jest.json -> "jsx": "react"
+    // "ts-jest": {
+    //   tsConfig: "<rootDir>/test/tsconfig.jest.json",
+    // },
   },
 };
