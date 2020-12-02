@@ -21,7 +21,6 @@
       "yarn lint",
       "yarn format",
       "yarn test --passWithNoTests",
-      "yarn type-check",
       "git add ."
     ],
     "*.*": [
