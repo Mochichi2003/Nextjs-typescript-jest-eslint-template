@@ -7,6 +7,7 @@ const IndexPage = () => (
       Hello Next.js Docker Eslint prettierr TypeScript Jest tailwindcss Example
       👋
     </h1>
+    {/* <h2>こんにちは</h2> */}
     <a href="https://nextjs.org">Next.js!</a>
     <p>
       <Link href="/about">
