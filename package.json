@@ -22,10 +22,6 @@
       "yarn format",
       "yarn test --passWithNoTests",
       "git add ."
-    ],
-    "*.*": [
-      "yarn format",
-      "git add ."
     ]
   },
   "dependencies": {
