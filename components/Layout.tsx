@@ -44,7 +44,10 @@ function ChangeDarkModeAndLightMode() {
   const { colorMode, toggleColorMode } = useColorMode();
   return (
     <>
-      <IconButton onClick={toggleColorMode}>
+      <IconButton
+        aria-label="dark mode Light mode change Button"
+        onClick={toggleColorMode}
+      >
         {colorMode === "light" ? <IcRoundWbSunny /> : <FaSolidMoon />}
       </IconButton>
     </>
